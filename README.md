@@ -463,9 +463,3 @@ Together these let the decoder filter out RF noise, ensure the correct message, 
 A wireless communication system was successfully implemented using two ESP32 boards and 433 MHz RF modules, transmitting data between two systems without wires. Direct transmission initially produced noisy, incorrect output because the raw link had no synchronization and no error detection. Introducing the custom protocol — with **preamble, start, length, checksum, and end markers** — improved reliability by detecting and rejecting errors. The project demonstrates how real communication systems work, what problems arise during wireless transmission, and how a deliberately designed packet protocol overcomes them.
 
 ---
-
-### What I changed to fix the render issues
-- **Root cause:** Mermaid rejected `-->|UART2 (TX2, GPIO17)|` because parentheses/commas inside edge labels break the parser.
-- **Fix:** moved the pin detail into the **quoted node labels** and kept edge labels free of `()` — all three diagrams now parse cleanly.
-- **Colors:** added `classDef` palettes (blue = host, green = ESP32, orange = RF) for clear visual grouping in the architecture and decode diagrams.
-- **Format:** replaced long paragraph blocks with tables and short lists for scannability; **no content was removed** — every section and technical value from the report is preserved.
